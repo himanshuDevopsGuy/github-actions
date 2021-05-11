@@ -20,4 +20,12 @@ jobs:
     steps:
       - name: Displaying Branch name
         run:  echo "102"
+  Display-workspace-path:
+    needs:
+      - Display-my-branch
+      - Display-my-name
+    runs-on: ubuntu-latest
+    steps:
+      - name: Displaying the workspace path
+        run: pwd
   
