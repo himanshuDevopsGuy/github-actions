@@ -1,0 +1,17 @@
+name: 102.yml  2 jobs in sequence
+on:
+  - push
+  - pull_request
+jobs:
+  Display-hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Displaying Hello World
+        run: echo "Hello-World"
+  Display-my-name:
+    needs: Display-hello-world
+    runs-on: ubuntu-latest
+    steps:
+      - name: Displaying my  name
+        run: echo "himanshuDevopsGuy"  
+  
