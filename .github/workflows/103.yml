@@ -1,0 +1,13 @@
+name:  checking a hello-world action
+on: 
+  - push
+  - pull_request
+
+jobs:
+  using-action:
+    runs-on:  ubuntu-latest
+
+    steps:
+      - name:  Using hello-world action
+        uses: actions/hello-world-javascript-action@v1
+
