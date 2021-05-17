@@ -2,7 +2,7 @@ name: Environment variables test
 on: 
   push:
     branches:
-      - "master"
+      - "104"
   pull_request:
     types:
       - "opened"
