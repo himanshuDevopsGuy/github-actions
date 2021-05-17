@@ -2,7 +2,7 @@ name: Environment variables test
 on: 
   push:
     branches:
-      - "104"
+      - "master"
   pull_request:
     types:
       - "opened"
@@ -25,8 +25,7 @@ jobs:
           echo "VAR_1: ${VAR_1}"
           echo "VAR_2: ${VAR_2}"
           echo "VAR_3: ${VAR_3}"
-
-  job-2 :
+ job-2 :
     needs: job-1
     runs-on: ubuntu-latest
     env:
