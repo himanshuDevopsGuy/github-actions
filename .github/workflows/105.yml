@@ -1,0 +1,35 @@
+name: Checkout Functionality
+on: 
+  push:
+    branches:
+      - "105"
+      -  main
+  pull_request:
+    types:
+      - "opened"
+
+jobs:
+  Checkout-functionality:
+    runs-on:  ubuntu-latest
+
+    steps:
+      - name: Push a random file
+        run: |
+          pwd
+          ls -a
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.email "my-name@name.com"
+          git config --global user.name "my-name"
+          git fetch
+          git checkout main
+          git branch --set-upstream-to=origin/main
+          git pull
+          ls -a
+          echo $RANDOM >>random.txt
+          ls -a
+          git add -A
+          git commit -m "Random file"
+          git push
+
+
