@@ -1,7 +1,7 @@
-name: Shell commands testing
+name: 101.yaml Shell commands testing
 on:
-  - push
-  - pull_request
+  repository_dispatch:
+    types: [echoing]
 jobs: 
   run-shell-command:
     runs-on: ubuntu-latest
